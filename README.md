@@ -1,2 +1,24 @@
-# BurlesqueSociety
-BurlesqueSociety is a community project. It offers a platform for people to freely share their daily funny stories. Here, you can recount amusing encounters, quirky incidents, or memorable adventures. Build connections, have fun, and spread joy through sharing these light-hearted tales.
+# burlesquesociety
+
+## Project setup
+```
+npm install
+```
+
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
+
+### Compiles and minifies for production
+```
+npm run build
+```
+
+### Lints and fixes files
+```
+npm run lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
