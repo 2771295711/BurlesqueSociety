@@ -1,7 +1,16 @@
 <template>
   <div class="homePageStyle">
     <div class="backgroundImgTop"></div>
-    <div class="carouselAndDescribeStyle"></div>
+    <div class="carouselAndDescribeStyle">
+      <el-carousel class="el-carousel" height="510px" indicator-position="none">
+        <el-carousel-item v-for="item in carouselList" :key="item">
+          <div class="carousel-item">
+            <img class="carousel-item-img" :src="item.fileUrl" alt="" />
+            <div class="carousel-item-content"></div>
+          </div>
+        </el-carousel-item>
+      </el-carousel>
+    </div>
     <div class="circleBlack"></div>
     <div class="backgroundImgBottom">
       <view class="footerIndex"> </view>
@@ -14,11 +23,11 @@ export default {
   name: "homePage",
   data() {
     return {
-      // carouselList: [
-      //   { fileUrl: require("https://picsum.photos/200/300"), name: "carousel1" },
-      //   { fileUrl: require("https://picsum.photos/200/300"), name: "carousel2" },
-      //   { fileUrl: require("https://picsum.photos/200/300"), name: "carousel3" },
-      // ],
+      carouselList: [
+        { fileUrl: "https://picsum.photos/200/300?key=1", name: "carousel1" },
+        { fileUrl: "https://picsum.photos/200/300?key=2", name: "carousel2" },
+        { fileUrl: "https://picsum.photos/200/300?key=3", name: "carousel3" },
+      ],
     };
   },
 };
@@ -32,13 +41,6 @@ export default {
   flex-direction: column;
   align-items: center;
 }
-.el-carousel__item h3 {
-  color: #475669;
-  opacity: 0.75;
-  line-height: 300px;
-  margin: 0;
-  text-align: center;
-}
 
 .backgroundImgTop {
   width: 100%;
@@ -48,9 +50,7 @@ export default {
 }
 .carouselAndDescribeStyle {
   width: 90%;
-  height: 45vh;
-  display: flex;
-  flex-direction: row;
+  height: 510px;
   background: linear-gradient(to right, #0074d9, #8a2be2);
   border-radius: 20px;
   border: 1px solid white;
@@ -77,5 +77,21 @@ export default {
   z-index: 9998;
   margin-top: -12%;
   margin-right: -5%;
+}
+.el-carousel {
+  border-radius: 20px;
+}
+.carousel-item {
+  display: flex;
+}
+.carousel-item-img {
+  opacity: 0.3;
+  width: 50%;
+  position: relative; /* 添加此行 */
+}
+
+.carousel-item-content {
+  width: 50%;
+  background-color: pink;
 }
 </style>
