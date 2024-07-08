@@ -5,6 +5,11 @@
 <script>
 export default {
   name: "produceInfo",
+  data() {
+    return {
+      name: "aaa",
+    };
+  },
 };
 </script>
 
