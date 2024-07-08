@@ -25,6 +25,13 @@ export default {
 </script>
 
 <style scoped>
+.homePageStyle {
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .el-carousel__item h3 {
   color: #475669;
   opacity: 0.75;
@@ -44,7 +51,7 @@ export default {
   height: 45vh;
   display: flex;
   flex-direction: row;
-
+  background: linear-gradient(to right, #0074d9, #8a2be2);
   border-radius: 20px;
   border: 1px solid white;
   margin-top: -35vh;

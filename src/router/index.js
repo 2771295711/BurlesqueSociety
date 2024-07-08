@@ -4,6 +4,7 @@ const routes = [
   {
     path: '/burlesqueSociety',
     name: 'index',
+    redirect: '/burlesqueSociety/homePage',
     component: () => import('../views/burlesqueSociety/index.vue'),
     meta: {
       title: '滑稽社',
@@ -35,7 +36,7 @@ const routes = [
 
   {
     path: '/',
-    redirect: '/burlesqueSociety/index',
+    redirect: '/burlesqueSociety/homepage',
   },
 ]
 
