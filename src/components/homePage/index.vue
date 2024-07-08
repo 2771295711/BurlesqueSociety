@@ -1,70 +1,67 @@
 <template>
   <div class="homePageStyle">
     <div class="backgroundImgTop"></div>
-    <div class="carouselAndDescribeStyle">
-
-
-    </div>
+    <div class="carouselAndDescribeStyle"></div>
     <div class="circleBlack"></div>
     <div class="backgroundImgBottom">
-      <view class="footerIndex">
-
-      </view>
+      <view class="footerIndex"> </view>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'homePage',
+  name: "homePage",
   data() {
     return {
-      carouselList: [
-        {fileUrl: require('@/assets/images/image1.png'), name: 'carousel1'},
-        {fileUrl: require('@/assets/images/image2.png'), name: 'carousel2'},
-        {fileUrl: require('@/assets/images/image3.png'), name: 'carousel3'}
-      ]
-    }
-  }
-}
+      // carouselList: [
+      //   { fileUrl: require("https://picsum.photos/200/300"), name: "carousel1" },
+      //   { fileUrl: require("https://picsum.photos/200/300"), name: "carousel2" },
+      //   { fileUrl: require("https://picsum.photos/200/300"), name: "carousel3" },
+      // ],
+    };
+  },
+};
 </script>
 
 <style scoped>
-.homePageStyle {
-  width: 100%;
-  height: 90vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.el-carousel__item h3 {
+  color: #475669;
+  opacity: 0.75;
+  line-height: 300px;
+  margin: 0;
+  text-align: center;
 }
-.backgroundImgTop{
+
+.backgroundImgTop {
   width: 100%;
+
   height: 45vh;
-  background: linear-gradient(to right, #0074D9, #8A2BE2, #FF69B4);;
+  background: linear-gradient(to right, #0074d9, #8a2be2, #ff69b4);
 }
-.carouselAndDescribeStyle{
+.carouselAndDescribeStyle {
   width: 90%;
   height: 45vh;
   display: flex;
   flex-direction: row;
-  background: linear-gradient(to right, #0074D9, #8A2BE2);
+
   border-radius: 20px;
   border: 1px solid white;
   margin-top: -35vh;
   z-index: 9999;
 }
-.backgroundImgBottom{
+.backgroundImgBottom {
   width: 100%;
   height: 45vh;
   background-color: #1b1a1a;
   position: absolute;
   margin-top: 45vh;
 }
-.footerIndex{
+.footerIndex {
   width: 80%;
   height: 20vh;
 }
-.circleBlack{
+.circleBlack {
   width: 20%;
   height: 200px;
   border-radius: 50%;

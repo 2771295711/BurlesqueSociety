@@ -1,9 +1,10 @@
 <template>
   <dash-board @handCheckDashBoard="handleCheckDashBoardClick"></dash-board>
   <div class="bodyStyle">
-    <transition name="slide" mode="out-in">
-      <component :is="currentView" v-if="loadedComponents[currentView]"/>
-    </transition>
+    <!-- <transition name="slide" mode="out-in">
+      <component :is="currentView" v-if="loadedComponents[currentView]" />
+    </transition> -->
+    <router-view></router-view>
   </div>
 </template>
 
@@ -13,38 +14,47 @@ import dashBoard from "@/components/dashboard/index.vue";
 export default {
   name: "burlesqueSociety",
   components: {
-    dashBoard
+    dashBoard,
   },
   data() {
     return {
-      currentView: 'homePage',
+      currentView: "homePage",
       loadedComponents: {
         homePage: false,
         produceInfo: false,
         callUs: false,
-        checkMore: false
-      }
-    }
+        checkMore: false,
+      },
+    };
   },
   mounted() {
-    this.handleCheckDashBoardClick("homePage")
+    this.handleCheckDashBoardClick("homePage");
   },
   methods: {
     handleCheckDashBoardClick(val) {
-      console.log(`${val}`)
-      this.currentView = val
-      this.loadComponent(val)
+      console.log(`${val}`);
+      this.currentView = val;
+      this.loadComponent(val);
     },
     async loadComponent(componentName) {
       try {
-        await import(`@/components/${componentName}/index.vue`)
-        this.loadedComponents[componentName] = true
+        await import(`@/components/${componentName}/index.vue`);
+        this.loadedComponents[componentName] = true;
       } catch (error) {
-        console.error(`Error loading component ${componentName}:`, error)
+        console.error(`Error loading component ${componentName}:`, error);
       }
     },
+    test() {
+      console.log("test");
+    },
   },
-}
+  setup() {
+    const test = () => {
+      console.log("test");
+    };
+    test();
+  },
+};
 </script>
 
 <style scoped>
